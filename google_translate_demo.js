@@ -21,13 +21,13 @@ const detectLanguage = async (text) => {
     }
 }
 
- //detectLanguage('Oggi è lunedì')
-   //  .then((res) => {
-     //    console.log(res);
-     //})
-     //.catch((err) => {
-      //   console.log(error);
-     //});
+//  detectLanguage('Oggi è lunedì')
+//     .then((res) => {
+//         console.log(res);
+//      })
+//      .catch((err) => {
+//         console.log(error);
+//      });
 
 const translateText = async (text, targetLanguage) => {
 
@@ -47,3 +47,13 @@ const translateText = async (text, targetLanguage) => {
      .catch((err) => {
          console.log(err);
      });
+
+async function listLanguages() {
+    // Lists available translation language with their names in English (the default).
+    const [languages] = await translate.getLanguages();
+  
+    console.log('Languages:');
+    languages.forEach(language => console.log(language));
+}
+
+listLanguages();
