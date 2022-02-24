@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<script type="text/javascript" src="google_translate_demo.js"></script>
+<html>
+    <head>
+        <h1>
+            Translate
+        </h1>
+    </head>    
+    <body>
+        <div>
+            <textarea id="textinp" name="w3review" rows="4" cols="50" required>
+            </textarea>
+            
+                <button type="button" id="buttons" onclick="myFunction()">Click Me!</button>
+                <textarea id="hasil" name="w3review" rows="4" cols="50">
+                </textarea>
+        </div>
+        
+    </body>
+</html>
+
+<script>
+function myFunction() {
+  let text=document.getElementById("textinp").value;
+  let hasil=document.getElementById("hasil").value=translateText(text);
+  console.log(text);
+  console.log(hasil);
+}
+</script>
