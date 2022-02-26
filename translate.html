@@ -58,7 +58,7 @@
 //const element = document.getElementById("buttons");
 //element.addEventListener("click", function() {
 //fetch("https://translation.googleapis.com/language/translate/v2",{
- //       key:"APIKEY",    
+ //       key:"API KEY",    
  //       method:'POST',
   //      body:JSON.stringify({
    //         q: document.getElementById("textinp").value,
@@ -79,18 +79,35 @@
 $("#buttons").click(function () {
 
 var url = "https://translation.googleapis.com/language/translate/v2";
+var url2= "https://translation.googleapis.com/language/translate/v2/detect";
 //Strings requiring translation
 url += "?q=" + escape($("#textinp").val());
+url2 += "?q=" + escape($("#textinp").val());
 //Target language
 url += "&target=" + $("#targetLanguage").val();
 url += "&source=" + $("#sourceLanguage").val();
 //Replace with your API key
-url += "&key=APIKEY";
+url += "&key=API KEY";
+//url2 += "&key=API KEY"; --Detect Language
+let bahasa="";
+//REQUEST DETECT LANGUAGE
+//$.get(url2, function (data, status) {
+    //Results are returned in an array following the order they were passed.
+//    console.log(data) ;
+ //   let bahasa=data.data.detections[0].language;
+ //   console.log(bahasa) ;
+//});
+
 $.get(url, function (data, status) {
     //Results are returned in an array following the order they were passed.
     console.log(data) ;
     let hasil=data.data.translations[0].translatedText;
-    $("#hasil").text(hasil);    
+    if(hasil.trim()==document.getElementById("textinp").value){
+        hasil="Wrong Source Languague";
+    }
+    $("#hasil").text(hasil);
+        
 }); 
 });
+
 </script> 
