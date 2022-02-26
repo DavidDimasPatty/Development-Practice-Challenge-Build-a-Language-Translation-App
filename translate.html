@@ -10,23 +10,39 @@
     </head>    
     <body>
         <div>
-            <textarea id="textinp" name="w3review" rows="4" cols="50" required>
-            </textarea>
-
-            <select id="targetLanguage">
-                <option value="ZH">Chinese (Mandarin)</option>
-                <option value="CS">Czech</option>
-                <option value="DA">Danish</option>
-                <option value="NL">Dutch</option>
-                <option value="EN">English</option>
-                <option value="ET">Estonian</option>
-                <option value="FR" selected = "selected">French</option>
-                <option value="ID" selected = "selected">Indonesia</option>
-            </select>
-                <button type="button" id="buttons">Click Me!</button>
-            
-                <textarea id="hasil" name="w3review" rows="4" cols="50">
+            <div>
+                <label>Source Language</label>
+                <select id="sourceLanguage">
+                    <option value="ZH">Chinese (Mandarin)</option>
+                    <option value="CS">Czech</option>
+                    <option value="DA">Danish</option>
+                    <option value="NL">Dutch</option>
+                    <option value="EN">English</option>
+                    <option value="ET">Estonian</option>
+                    <option value="FR" selected = "selected">French</option>
+                    <option value="ID" selected = "selected">Indonesia</option>
+                </select>
+                <textarea id="textinp" name="w3review" rows="4" cols="50" required>
                 </textarea>
+            </div>
+            <div>
+                <label>Target Language</label>
+                <select id="targetLanguage">
+                    <option value="ZH">Chinese (Mandarin)</option>
+                    <option value="CS">Czech</option>
+                    <option value="DA">Danish</option>
+                    <option value="NL">Dutch</option>
+                    <option value="EN">English</option>
+                    <option value="ET">Estonian</option>
+                    <option value="FR" selected = "selected">French</option>
+                    <option value="ID" selected = "selected">Indonesia</option>
+                </select>
+                   
+                    <textarea id="hasil" name="w3review" rows="4" cols="50">
+                    </textarea>
+            </div> 
+            <button type="button" id="buttons">Click Me!</button>
+                   
         </div>
         
     </body>
@@ -35,14 +51,14 @@
 <script type="text/javascript" >  
 //import Translate from '@google-cloud/translate'; 
 //const translate = new Translate({
- //   projectId: 'avian-current-603', //eg my-proj-0o0o0o0o'
-  //  keyFilename: 'avian-current-603-5da8bf4868b8.json' //eg my-proj-0fwewexyz.json
+ //   projectId: 'API KEY', //eg my-proj-0o0o0o0o'
+  //  keyFilename: 'API KEY' //eg my-proj-0fwewexyz.json
 //}); 
 
 //const element = document.getElementById("buttons");
 //element.addEventListener("click", function() {
 //fetch("https://translation.googleapis.com/language/translate/v2",{
- //       key:"AIzaSyBT9bNbAp8j8yz6M7OqBwHLmrVdC3PMzOw",    
+ //       key:"APIKEY",    
  //       method:'POST',
   //      body:JSON.stringify({
    //         q: document.getElementById("textinp").value,
@@ -67,13 +83,14 @@ var url = "https://translation.googleapis.com/language/translate/v2";
 url += "?q=" + escape($("#textinp").val());
 //Target language
 url += "&target=" + $("#targetLanguage").val();
+url += "&source=" + $("#sourceLanguage").val();
 //Replace with your API key
-url += "&key=API_Key";
+url += "&key=APIKEY";
 $.get(url, function (data, status) {
     //Results are returned in an array following the order they were passed.
     console.log(data) ;
-    $("#hasil").text(data.data.translations[0].translatedText);
-    
-});       
+    let hasil=data.data.translations[0].translatedText;
+    $("#hasil").text(hasil);    
+}); 
 });
 </script> 
