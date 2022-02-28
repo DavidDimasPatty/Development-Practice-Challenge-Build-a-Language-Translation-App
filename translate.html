@@ -2,6 +2,7 @@
 
 <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 <meta content="utf-8" http-equiv="encoding">
+<link rel="stylesheet" href="style.css">
 <html>
     <head>
         <h1>
@@ -9,24 +10,27 @@
         </h1>
     </head>    
     <body>
-        <div>
-            <div>
+        <div class="flex-container">
+            <div class ="sect1" >
                 <label>Source Language</label>
-                <select id="sourceLanguage">
-                    <option value="ZH">Chinese (Mandarin)</option>
-                    <option value="CS">Czech</option>
-                    <option value="DA">Danish</option>
-                    <option value="NL">Dutch</option>
-                    <option value="EN">English</option>
-                    <option value="ET">Estonian</option>
-                    <option value="FR" selected = "selected">French</option>
-                    <option value="ID" selected = "selected">Indonesia</option>
-                </select>
+                <div class ="subsect1">
+                    <select id="sourceLanguage">
+                        <option value="ZH">Chinese (Mandarin)</option>
+                        <option value="CS">Czech</option>
+                        <option value="DA">Danish</option>
+                        <option value="NL">Dutch</option>
+                        <option value="EN">English</option>
+                        <option value="ET">Estonian</option>
+                        <option value="FR" selected = "selected">French</option>
+                        <option value="ID" selected = "selected">Indonesia</option>
+                    </select>
+                </div>
                 <textarea id="textinp" name="w3review" rows="4" cols="50" required>
                 </textarea>
             </div>
-            <div>
+            <div class="sect2">
                 <label>Target Language</label>
+                <div class="subsect2">
                 <select id="targetLanguage">
                     <option value="ZH">Chinese (Mandarin)</option>
                     <option value="CS">Czech</option>
@@ -37,12 +41,13 @@
                     <option value="FR" selected = "selected">French</option>
                     <option value="ID" selected = "selected">Indonesia</option>
                 </select>
-                   
-                    <textarea id="hasil" name="w3review" rows="4" cols="50">
+                </div>
+                    <textarea id="hasil" name="w3review" rows="4" cols="50" readonly>
                     </textarea>
             </div> 
-            <button type="button" id="buttons">Click Me!</button>
-                   
+            <div class = "but">
+            <button type="button" id="buttons" style="width: fit-content; display: flex; ;">Click Me!</button>
+            </div>  
         </div>
         
     </body>
@@ -87,7 +92,7 @@ url2 += "?q=" + escape($("#textinp").val());
 url += "&target=" + $("#targetLanguage").val();
 url += "&source=" + $("#sourceLanguage").val();
 //Replace with your API key
-url += "&key=API KEY";
+url += "API KEY";
 //url2 += "&key=API KEY"; --Detect Language
 let bahasa="";
 //REQUEST DETECT LANGUAGE
