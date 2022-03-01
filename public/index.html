@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<link rel="stylesheet" href="style.css">
+<html>
+    <head>
+        <h1>
+            Translate
+        </h1>
+    </head>    
+    <body>
+        <div class="flex-container">
+            <div class ="sect1" >
+                <label>Source Language</label>
+                <div class ="subsect1">
+                    <select id="sourceLanguage">
+                        <option value="ZH">Chinese (Mandarin)</option>
+                        <option value="CS">Czech</option>
+                        <option value="DA">Danish</option>
+                        <option value="NL">Dutch</option>
+                        <option value="EN">English</option>
+                        <option value="ET">Estonian</option>
+                        <option value="FR" >French</option>
+                        <option value="ID" >Indonesia</option>
+                    </select>
+                </div>
+                <textarea id="textinp" name="w3review" rows="4" cols="50" required>
+                </textarea>
+            </div>
+            <div class="sect2">
+                <label>Target Language</label>
+                <div class="subsect2">
+                <select id="targetLanguage">
+                    <option value="ZH">Chinese (Mandarin)</option>
+                    <option value="CS">Czech</option>
+                    <option value="DA">Danish</option>
+                    <option value="NL">Dutch</option>
+                    <option value="EN">English</option>
+                    <option value="ET">Estonian</option>
+                    <option value="FR" >French</option>
+                    <option value="ID" >Indonesia</option>
+                </select>
+                </div>
+                    <textarea id="hasil" name="w3review" rows="4" cols="50" readonly>
+                    </textarea>
+            </div> 
+            <div class = "but">
+            <button type="button" id="buttons" style="width: fit-content; display: flex; ;">Click Me!</button>
+            </div>  
+        </div>
+       
+
+     
+    </body>
+</html>
+
+<script src="main.js"></script>
