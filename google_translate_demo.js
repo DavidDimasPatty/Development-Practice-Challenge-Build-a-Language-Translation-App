@@ -29,6 +29,7 @@ const detectLanguage = async (text) => {
 //         console.log(error);
 //      });
 
+
 const translateText = async (text, targetLanguage) => {
 
     try {
@@ -40,14 +41,16 @@ const translateText = async (text, targetLanguage) => {
     }
 };
 
- translateText('Oggi è lunedì', 'en')
+
+
+ translateText("Morning","id")
      .then((res) => {
          console.log(res);
      })
      .catch((err) => {
          console.log(err);
      });
-
+    
 async function listLanguages() {
     // Lists available translation language with their names in English (the default).
     const [languages] = await translate.getLanguages();
@@ -56,4 +59,4 @@ async function listLanguages() {
     languages.forEach(language => console.log(language));
 }
 
-listLanguages();
+//listLanguages();
