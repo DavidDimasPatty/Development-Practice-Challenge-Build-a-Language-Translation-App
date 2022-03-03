@@ -4,16 +4,18 @@
 <link rel="stylesheet" href="style.css">
 <html>
     <head>
-        <h1>
+        <h1 style="padding-left: 450px; font-size: 42px; padding-top: 5px; position: fixed;">
             Translate Application
         </h1>
+        <h3 style="padding-left: 522px; position: fixed; margin-top: 90px;">
+            "translate every word in here"
+        </h3>
     </head>    
     <body>
         <div class="flex-container">
             <div class ="sect1" >
-                
-                <div >
-                    <label>Source Language</label>
+                <label>Source Language</label>
+                <div class ="subsect1">
                     <select id="sourceLanguage">
                         <option value="ZH">Chinese (Mandarin)</option>
                         <option value="CS">Czech</option>
@@ -25,18 +27,15 @@
                         <option value="ID" >Indonesia</option>
                     </select>
                 </div>
-              
-                <div class="inputArea">
-                    <textarea id="textinp" name="w3review" rows="4" cols="50" required>
-                    </textarea>
-                </div>    
             </div>
-            
-            
+            <br>
+            <textarea id="textinp" name="w3review" rows="8" cols="50" required>
+            </textarea>
+            <br>
             <div class="sect2">
-                <div>
-                    <label>Target Language</label>
-                    <select id="targetLanguage">
+                <label>Target Language</label>
+                <div class="subsect2">
+                <select id="targetLanguage">
                     <option value="ZH">Chinese (Mandarin)</option>
                     <option value="CS">Czech</option>
                     <option value="DA">Danish</option>
@@ -47,18 +46,25 @@
                     <option value="ID" >Indonesia</option>
                 </select>
                 </div>
-                <div class="inputArea">
-                    <textarea id="hasil" name="w3review" rows="4" cols="50" readonly>
-                    </textarea>
-                </div>
             </div> 
-           
-        </div>
-       
-        <div class = "but">
+            <br>
+            <textarea id="hasil" name="w3review" rows="8" cols="50" readonly>
+            </textarea>
+            <br>
+            <div class = "but">
             <button type="button" id="buttons" style="width: fit-content; display: flex; ;">Translate</button>
-        </div> 
-            
+            </div>  
+        </div>  
+    <p class="one">
+        Teknik Informatika
+    </p>
+    <p class="two">
+        Universitas Katolik Parahyangan
+    </p>
+    <p class="three">
+        Proyek Informatika
+    </p>
+    
      
     </body>
 </html>
